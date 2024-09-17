@@ -140,7 +140,7 @@ const CourseInfo = {
 //             console.log{"Not a valid input."} //if parameters for IDs are not a numerical value.
 //         }
 //     }catch(error){
-//         console.log(error)
+//         console.log(error);
 // }
 //   //
 //     return result;
@@ -153,12 +153,14 @@ const CourseInfo = {
 
 
 //Assignments: 
-//Exclude assignments that are not yet due
+
 //Look at due dates for Assignment group
     //  due_at: "2023-01-25",       [125]submitted_at: "2023-01-25",        [132]submitted_at: "2023-01-24",
     // due_at: "2023-02-27",        [125]submitted_at: "2023-02-12",        [132]submitted_at: "2023-03-07",
     // due_at: "3156-11-15",        [125]submitted_at: "2023-01-25",          
   //Use Javascript Built In Function for current date for comparison
+
+//Exclude assignments that are not yet due with current date
 const currentDate = new Date();
 const day = currentDate.getUTCDate(); 
 const year = currentDate.getFullYear();
@@ -172,21 +174,22 @@ const fullDate = `${year}-${month}-${day}`
 // console.log(currentDate)
 console.log(fullDate)
 
+//comparinng assignments - 
+
+
+
+
+
+
 //Make Date comparison a function?
+//Move all due dates into an array
+//If/else for due date and exclusion
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+let dueDates = []
+  for(let items = 0; items < AssignmentGroup.assignments.length; items++){
+    dueDates.push(AssignmentGroup.assignments[items].due_at);
+  }
+console.log(dueDates)
 
 
 
