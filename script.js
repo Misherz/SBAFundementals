@@ -209,7 +209,7 @@ for(let j = 0; j < LearnerSubmissions.length; j++){
 }
 }
 
-
+//output for testing
 console.log("Due " + dueDates + " Learner ID")
 console.log("Sub " + learnerDates + ` ${learnerID}`)
 console.log("Sub " + learnerDates2 + ` ${learnerID2}`)
