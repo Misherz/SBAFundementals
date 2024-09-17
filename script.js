@@ -1,17 +1,17 @@
 // Requirements
-//     Using let/const
-//     Using operators to perform calculations on variable and literals
+//     Using let/const x
+//     Using operators to perform calculations on variable and literals x
 //     Using strings numbers boolean values within variables
 //     2 if/else statements
-//     use try/catch
+//     use try/catch X
 //     2 diff loops
 //         break || continue
 //     manipulate array && objects 
 //     functions for repeated tasks
 //     out process as shown
 //     no errors
-//     commit
-//     readme file
+//     commit 
+//     readme file X
 
 
 //// The provided course information.
@@ -183,13 +183,36 @@ console.log(fullDate)
 
 //Make Date comparison a function?
 //Move all due dates into an array
+//move user submission into an array
 //If/else for due date and exclusion
-
+const learnerID = 125;
+const learnerID2 = 132;
+let learnerDates = []
+let learnerDates2 = []
 let dueDates = []
+//assignment dates
   for(let items = 0; items < AssignmentGroup.assignments.length; items++){
     dueDates.push(AssignmentGroup.assignments[items].due_at);
   }
-console.log(dueDates)
+
+//learner ID 125
+  for(let i = 0; i < LearnerSubmissions.length; i++){
+    if (LearnerSubmissions[i].learner_id === learnerID){
+    learnerDates.push(LearnerSubmissions[i].submission.submitted_at);
+  }
+}
+
+//Learner ID 132
+for(let j = 0; j < LearnerSubmissions.length; j++){
+  if (LearnerSubmissions[j].learner_id === learnerID){
+  learnerDates2.push(LearnerSubmissions[j].submission.submitted_at);
+}
+}
+
+
+console.log("Due " + dueDates + " Learner ID")
+console.log("Sub " + learnerDates + ` ${learnerID}`)
+console.log("Sub " + learnerDates2 + ` ${learnerID2}`)
 
 
 
