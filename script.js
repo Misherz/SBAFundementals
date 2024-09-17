@@ -159,8 +159,24 @@ const CourseInfo = {
     // due_at: "2023-02-27",        [125]submitted_at: "2023-02-12",        [132]submitted_at: "2023-03-07",
     // due_at: "3156-11-15",        [125]submitted_at: "2023-01-25",          
   //Use Javascript Built In Function for current date for comparison
-  let currentDate = new Date();
-  console.log(currentDate)
+const currentDate = new Date();
+const day = currentDate.getUTCDate(); 
+const year = currentDate.getFullYear();
+const month = currentDate.getMonth();
+
+const fullDate = `${year}-${month}-${day}`
+
+// console.log(year)
+// console.log(month)
+// console.log(day)
+// console.log(currentDate)
+console.log(fullDate)
+
+//Make Date comparison a function?
+
+
+
+
 
 
 
