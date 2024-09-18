@@ -6,11 +6,11 @@
 //     use try/catch X
 //     2 diff loops
 //         break || continue
-//     manipulate array && objects 
-//     functions for repeated tasks
+//     manipulate array && objects X
+//     functions for repeated tasks X
 //     out process as shown
 //     no errors
-//     commit 
+//     commit X
 //     readme file X
 
 
@@ -160,7 +160,7 @@ const CourseInfo = {
     // due_at: "3156-11-15",        [125]submitted_at: "2023-01-25",          
   //Use Javascript Built In Function for current date for comparison
 
-//Exclude assignments that are not yet due with current date
+//Get current date
 const currentDate = new Date();
 const day = currentDate.getUTCDate(); 
 const year = currentDate.getFullYear();
@@ -172,47 +172,75 @@ const fullDate = `${year}-${month}-${day}`
 // console.log(month)
 // console.log(day)
 // console.log(currentDate)
-console.log(fullDate)
+console.log(`Current Date: ${fullDate}`)
 
 //comparinng assignments - 
-
-
-
-
-
 
 //Make Date comparison a function?
 //Move all due dates into an array
 //move user submission into an array
 //If/else for due date and exclusion
-const learnerID = 125;
-const learnerID2 = 132;
-let learnerDates = []
-let learnerDates2 = []
+
 let dueDates = []
 //assignment dates
-  for(let items = 0; items < AssignmentGroup.assignments.length; items++){
-    dueDates.push(AssignmentGroup.assignments[items].due_at);
-  }
+for(let items = 0; items < AssignmentGroup.assignments.length; items++){
+  dueDates.push(AssignmentGroup.assignments[items].due_at);
+}
+//Filtering out dates not needed
+dueDates.pop()
 
-//learner ID 125
-  for(let i = 0; i < LearnerSubmissions.length; i++){
-    if (LearnerSubmissions[i].learner_id === learnerID){
-    learnerDates.push(LearnerSubmissions[i].submission.submitted_at);
+console.log(`Due Dates: ${dueDates}`)
+
+// const learnerID = 125;
+// const learnerID2 = 132;
+// let learnerDates = []
+// let learnerDates2 = []
+
+// //learner ID 125
+//   for(let i = 0; i < LearnerSubmissions.length; i++){
+//     if (LearnerSubmissions[i].learner_id === learnerID){
+//     learnerDates.push(LearnerSubmissions[i].submission.submitted_at);
+//   }
+// }
+
+// //Learner ID 132
+// for(let j = 0; j < LearnerSubmissions.length; j++){
+//   if (LearnerSubmissions[j].learner_id === learnerID){
+//   learnerDates2.push(LearnerSubmissions[j].submission.submitted_at);
+// }
+// }
+// console.log("Due " + dueDates + " Learner ID")
+// console.log("Sub " + learnerDates + ` ${learnerID}`)
+// console.log("Sub " + learnerDates2 + ` ${learnerID2}`)
+
+//Turning above into a function
+
+function submittedDates(submissions, learnerID) {
+  let learnerDates = [];
+
+  for(let j = 0; j < submissions.length; j++){
+    if (submissions[j].learner_id === learnerID){
+    learnerDates.push(submissions[j].submission.submitted_at);
   }
 }
-
-//Learner ID 132
-for(let j = 0; j < LearnerSubmissions.length; j++){
-  if (LearnerSubmissions[j].learner_id === learnerID){
-  learnerDates2.push(LearnerSubmissions[j].submission.submitted_at);
-}
+    return learnerDates;
 }
 
 //output for testing
-console.log("Due " + dueDates + " Learner ID")
-console.log("Sub " + learnerDates + ` ${learnerID}`)
-console.log("Sub " + learnerDates2 + ` ${learnerID2}`)
+let learnerID = 125;
+const learnerDates = submittedDates(LearnerSubmissions, learnerID)
+console.log(learnerID + ' submitted: ' + learnerDates)
+
+learnerID = 132;
+const learnerDates1 = submittedDates(LearnerSubmissions, learnerID)
+console.log(learnerID + ' submitted: ' + learnerDates1)
+
+//Getting learners score
+
+
+
+
+
 
 
 
