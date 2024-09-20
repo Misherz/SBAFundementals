@@ -132,12 +132,20 @@ function getLearnerData(course, ag, submissions) {
               for( const student of result){
                   if(element.learner_id == student.id){
                       student[element.assignment_id] =  element.submission.score;
-
                   }
               }
+          }   
+      }); 
+      let learnerScore = {}; //Finding total for average
+      for(learnerScore in submissions.score){
+          learnerScore.push(submissions.score);
+          const sum = learnerScore.reduce; 
+            (accumulator, currentValue) => accumulator + currentValue.submission.score,0;
           }
-      });
-
+          console.log(learnerScore);
+          //getting average
+      
+      
 
 
 
